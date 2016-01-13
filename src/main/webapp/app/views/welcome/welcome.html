@@ -1,0 +1,70 @@
+<script type="text/ng-template" id="field-error-messages">
+	<div ng-message="required">Please enter this field.</div>
+	<div ng-message="minlength">The field is too short.</div>
+	<div ng-message="maxlength">The field is too long</div>
+	<div ng-message="email">The field has an invalid email address</div>
+</script>
+
+<div class="container">
+	<div class="row">
+		<div class="list-group col-md-4">
+			{{ 'MESSAGE' | translate }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="list-group col-md-4">
+			{{ 'MESSAGE1' | translate }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="list-group col-md-4">
+			{{ num1 }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="list-group col-md-4">
+			{{ date1 }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="list-group col-md-4">
+			<input type="number" class="form-control" id="num_text2" placeholder="Currency Amount" ng-model="num2" step="1">
+			{{ num2 | currency: 'VND': 0 }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="list-group col-md-4">
+			{{ num2 | currency: 'USD': 2 }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="list-group col-md-4">
+			<input type="datetime" class="form-control" id="date2" placeholder="Date time" ng-model="date2"> {{ date2 | date: 'yyyy-MM-dd' }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="list-group col-md-4">
+			{{ date2 | date:"yyyy-MM-dd @ h:mma":"CST" }}
+		</div>
+	</div>
+	<div class="row">
+		<div class="list-group col-md-4">
+			<form name="signup_form" novalidate ng-submit="signupForm()">
+				<fieldset>
+					<legend>Signup</legend>
+					<div class="row">
+						<div class="large-12 columns">
+							<label>Name</label>
+							<input type="text" placeholder="Name" name="name" ng-model="signup.name" class="form-control" ng-minlength=3 ng-maxlength=20
+							required />
+							<div ng-messages="signup_form.name.$error" role="alert">
+								<div ng-messages-include="field-error-messages"></div>
+							</div>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
