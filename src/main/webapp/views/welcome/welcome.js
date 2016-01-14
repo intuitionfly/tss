@@ -1,7 +1,7 @@
 angular.module('ptiweb.welcome', ['ngRoute'])
 	.config(['$routeProvider', function ($routeProvider) {
 		$routeProvider.when('/welcome', {
-			templateUrl: 'welcome/welcome.html',
+			templateUrl: 'views/welcome/welcome.html',
 			controller: 'WelcomeCtrl'
 		});
 	}])

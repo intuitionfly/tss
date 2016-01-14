@@ -13,7 +13,7 @@
 	
 	<mvc:annotation-driven/>
 	
-	<mvc:resources mapping="/**" location="/app" cache-period="31556926"/>
+	<mvc:resources mapping="/**" location="/" cache-period="31556926"/>
 	
 	<context:component-scan base-package="org.intu.tss"/>
 	
