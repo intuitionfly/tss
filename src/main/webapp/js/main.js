@@ -3,7 +3,7 @@ angular.module('ptiweb', [
 	'ngMessages',
 	'pascalprecht.translate',
 	'ptiweb.welcome',
-	'jsonServices']).
+	'resouceServices']).
 	config(['$routeProvider', function ($routeProvider) {
 		$routeProvider.otherwise({ redirectTo: '/welcome' });
 	}]).
