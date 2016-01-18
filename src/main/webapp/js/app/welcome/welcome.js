@@ -13,6 +13,7 @@ angular.module('ptiweb.welcome', ['ngRoute', 'resouceServices'])
 				}, function(response){
 					//success
 					$scope.resp = "success";
+					$scope.user = response.user;
 				},
 				function(response){
 					//fail
